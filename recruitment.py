@@ -106,16 +106,8 @@ def display_recruiter_pricing_plans():
         st.markdown("**Paid Upgrade: $50/month**")
         st.markdown("- Analyze 100 Resumes")
         if st.button("Upgrade to Basic", key="recruiter_basic_plan"):
-            st.markdown(
-                """
-                        <a href="https://pakistanrecruitment.com/ai-recruitment-agents/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-                            <button style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
-                                Proceed to Payment
-                            </button>
-                        </a>
-                        """,
-                unsafe_allow_html=True
-            )
+            st.markdown("Payment link will be available soon.")
+
     with col3:
         st.subheader("Recruiter Premium Plan")
         st.markdown("**$80/month**")
@@ -123,16 +115,7 @@ def display_recruiter_pricing_plans():
         st.markdown("- Matching & Missing Keywords")
         st.markdown("- Priority Support")
         if st.button("Upgrade to Premium", key="recruiter_premium_plan"):
-            st.markdown(
-                """
-                        <a href="https://pakistanrecruitment.com/ai-recruitment-agents/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-                            <button style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
-                                Proceed to Payment
-                            </button>
-                        </a>
-                        """,
-                unsafe_allow_html=True
-            )
+            st.markdown("Payment link will be available soon.")
 
 async def analyze_resume_recruiter(upload_files, jd, must_have_keywords, good_to_have_keywords, top_n):
     try:
@@ -273,7 +256,6 @@ async def analyze_resume_recruiter(upload_files, jd, must_have_keywords, good_to
 def recruiter_app():
     if st.session_state.current_page == "login_signup":
         st.title("CV Ranker - Recruiter Access")
-        st.markdown("**Powered by PakistanRecruitment**", unsafe_allow_html=True)
         st.subheader("Welcome Back!")
         col1, col2 = st.columns(2)
         with col1:
@@ -302,7 +284,6 @@ def recruiter_app():
 
     elif st.session_state.current_page == "signup_page":
         st.title("CV Ranker Signup (Recruiter)")
-        st.markdown("**Powered by PakistanRecruitment**", unsafe_allow_html=True)
         username = st.text_input("Username", key="signup_username")
         email = st.text_input("Email", key="signup_email")
         password = st.text_input("Password", type="password", key="signup_password")
@@ -323,7 +304,6 @@ def recruiter_app():
 
     elif st.session_state.current_page == "login_page":
         st.title("CV Ranker Login (Recruiter)")
-        st.markdown("**Powered by PakistanRecruitment**", unsafe_allow_html=True)
         username = st.text_input("Username", key="login_username")
         password = st.text_input("Password", type="password", key="login_password")
         if st.button("Login", key="login_action_button"):
@@ -346,7 +326,6 @@ def recruiter_app():
     elif st.session_state.current_page == "recruiter_pricing":
         logged_in_user = st.session_state.logged_in_user
         st.title("CV Ranker")
-        st.markdown("**Powered by PakistanRecruitment**", unsafe_allow_html=True)
         if logged_in_user and logged_in_user != "recruiter_temp":
             st.write(f"Welcome, {logged_in_user}!")
         display_recruiter_pricing_plans()
@@ -361,7 +340,6 @@ def recruiter_app():
     elif st.session_state.current_page == "recruiter_dashboard":
         logged_in_user = st.session_state.logged_in_user
         st.title("CV Ranker - Recruiter Dashboard")
-        st.markdown("**Powered by PakistanRecruitment**", unsafe_allow_html=True)
         st.header("Match. Rank. Hire Fast", divider="grey")
         st.markdown('''
             **How to use:**
